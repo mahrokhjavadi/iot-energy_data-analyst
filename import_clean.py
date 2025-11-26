@@ -13,7 +13,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 
 # Read CSV file
-df = pd.read_csv('C:\\0_DA\\Iot_DataAnalyst\\smart_grid_dataset_city_modified.csv') # Replace with your file name
+df = pd.read_csv('C:\\0_DA\\iot-energy_data-analyst\\smart_grid_dataset_city_modified.csv') # Replace with your file name
 
 print("=" * 80)
 print("Data loaded successfully!")
