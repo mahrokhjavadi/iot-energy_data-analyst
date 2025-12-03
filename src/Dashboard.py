@@ -113,6 +113,7 @@ app.layout = dbc.Container(fluid=True, children=[
     Output("rq1-plot", "figure"),
     Input("rq1-agg", "value")
 )
+
 def update_rq1(agg):
     fig = px.line(
         df.groupby(agg)["Power Consumption (kW)"].mean().reset_index(),
@@ -128,6 +129,7 @@ def update_rq1(agg):
     Output("rq2-scatter", "figure"),
     Input("rq2-feature", "value")
 )
+
 def update_rq2(feature):
     fig = px.scatter(
         df.sample(5000),
@@ -145,6 +147,7 @@ def update_rq2(feature):
     Output("rq3-timeseries", "figure"),
     Input("rq3-model", "value")
 )
+
 def update_rq3(model):
 
     # Scatter plot using real features (Voltage vs Power Consumption)
