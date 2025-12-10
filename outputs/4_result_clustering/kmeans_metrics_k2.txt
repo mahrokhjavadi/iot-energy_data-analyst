@@ -1,0 +1,6 @@
+K-MEANS++ PERFORMANCE METRICS
+==================================================
+Optimal k: 2
+Silhouette Score: 0.3383
+Davies-Bouldin Index: 1.1675
+Calinski-Harabasz Index: 33300.5308

@@ -7548,7 +7548,7 @@ this notebook performs a <strong>full data cleaning and quality assurance workfl
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -7602,18 +7602,33 @@ This ensures that all cleaning operations have a consistent and organized file s
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
-<span class="c1"># 1. CONFIGURATION</span>
+<span class="c1"># 1. CONFIGURATION (RELATIVE PATH VERSION)</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="n">INPUT_FILE</span> <span class="o">=</span> <span class="s2">"C:/0_DA/Iot_DataAnalyst/smart_grid_dataset_city_modified.csv"</span>
-<span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s2">"cleaned_datasets"</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[INFO] Created folder: </span><span class="si">{</span><span class="n">OUTPUT_FOLDER</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[INFO] Output folder exists: </span><span class="si">{</span><span class="n">OUTPUT_FOLDER</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"CONFIGURATION LOADED – Using Relative Paths"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 
+<span class="c1"># Get project root folder (one level above "notebooks")</span>
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+
+<span class="c1"># Input file (relative to project root)</span>
+<span class="n">INPUT_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_ROOT</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="s2">"raw"</span><span class="p">,</span> <span class="s2">"smart_grid_dataset_city_modified.csv"</span><span class="p">)</span>
+
+<span class="c1"># Output folder for cleaned datasets</span>
+<span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_ROOT</span><span class="p">,</span> <span class="s2">"outputs"</span><span class="p">,</span> <span class="s2">"2_result_cleaned_datasets"</span><span class="p">)</span>
+
+<span class="c1"># Create folder if it doesn't exist</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[INFO] Project root:       </span><span class="si">{</span><span class="n">PROJECT_ROOT</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[INFO] Input file:         </span><span class="si">{</span><span class="n">INPUT_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[INFO] Output folder:      </span><span class="si">{</span><span class="n">OUTPUT_FOLDER</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Timestamp for exported files</span>
 <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7627,7 +7642,12 @@ This ensures that all cleaning operations have a consistent and organized file s
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[INFO] Output folder exists: cleaned_datasets
+<pre>================================================================================
+CONFIGURATION LOADED – Using Relative Paths
+================================================================================
+[INFO] Project root:       /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst
+[INFO] Input file:         /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/data/raw/smart_grid_dataset_city_modified.csv
+[INFO] Output folder:      /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/2_result_cleaned_datasets
 </pre>
 </div>
 </div>
@@ -7687,7 +7707,7 @@ This ensures that all cleaning operations have a consistent and organized file s
 ================================================================================
 [STEP 1] LOADING DATA
 ================================================================================
-[SUCCESS] Loaded file: C:/0_DA/Iot_DataAnalyst/smart_grid_dataset_city_modified.csv
+[SUCCESS] Loaded file: /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/data/raw/smart_grid_dataset_city_modified.csv
 [INFO] Original shape: (50010, 27)
 </pre>
 </div>
@@ -7711,7 +7731,7 @@ It helps verify data types, detect potential issues, and ensure the dataset is r
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -7827,7 +7847,7 @@ A cleaned copy of the dataset is created, and the process ensures no numeric mis
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -7887,7 +7907,7 @@ Duplicate detection ensures data integrity, and only unique records are retained
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -7944,7 +7964,7 @@ All detected outlier indices are collected to understand how many records may re
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8027,7 +8047,7 @@ The number of removed rows is reported to track data reduction.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8082,7 +8102,7 @@ The original mixed-format column is then removed to improve data consistency and
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8150,7 +8170,7 @@ Invalid or non-date values are safely converted to <code>NaT</code> using <code>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8202,12 +8222,12 @@ Since the <code>region</code> column contains only a single category, it provide
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=07cdf4cd-6ff7-4012-99d8-ab58604a801f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=07cdf4cd-6ff7-4012-99d8-ab58604a801f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8222,6 +8242,23 @@ Since the <code>region</code> column contains only a single category, it provide
         <span class="n">df_final</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"region"</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"[INFO] Dropped column 'region' (only one category)"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+================================================================================
+[STEP 9] DROPPING NON-INFORMATIVE COLUMNS
+================================================================================
+[INFO] Dropped column 'region' (only one category)
+</pre>
 </div>
 </div>
 </div>
@@ -8244,7 +8281,7 @@ This ensures all categorical information is represented in a machine-readable fo
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8311,7 +8348,7 @@ The report includes row counts, removed duplicates and outliers, processed colum
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># =============================================================================</span>
@@ -8321,38 +8358,42 @@ The report includes row counts, removed duplicates and outliers, processed colum
 <span class="nb">print</span><span class="p">(</span><span class="s2">"[STEP 11] SAVING RESULTS"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 
+<span class="c1"># Correct relative path saving</span>
 <span class="n">cleaned_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"cleaned_data_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.csv"</span><span class="p">)</span>
-<span class="n">report_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"cleaning_report_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">)</span>
+<span class="n">report_file</span>  <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">OUTPUT_FOLDER</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"cleaning_report_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">)</span>
 
+<span class="c1"># Save cleaned CSV</span>
 <span class="n">df_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">cleaned_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[SUCCESS] Cleaned data saved: </span><span class="si">{</span><span class="n">cleaned_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[SUCCESS] Cleaned data saved at: </span><span class="si">{</span><span class="n">cleaned_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
+<span class="c1"># Create report text</span>
 <span class="n">report_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
 <span class="s2">CLEANING REPORT – ASIAN POWER GRID</span>
 <span class="s2">===============================================</span>
 <span class="s2">Timestamp: </span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span>
 
-<span class="s2">Original rows:     </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_original</span><span class="p">)</span><span class="si">}</span>
-<span class="s2">Final rows:        </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">Original rows:      </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_original</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">Final rows:         </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span><span class="si">}</span>
 <span class="s2">Duplicates removed: </span><span class="si">{</span><span class="n">duplicate_count</span><span class="si">}</span>
 <span class="s2">Outliers removed:   </span><span class="si">{</span><span class="n">before</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">after</span><span class="si">}</span>
 
 <span class="s2">Processed columns:</span>
 <span class="s2">- DecommissionStatus cleaned into OperationalStatus + DecommissionDate</span>
 <span class="s2">- Dates converted to datetime</span>
-<span class="s2">- region column dropped</span>
+<span class="s2">- 'region' column dropped</span>
 <span class="s2">- One-hot encoding for categorical columns</span>
 <span class="s2">- Numeric missing values filled</span>
 
 <span class="s2">Saved files:</span>
-<span class="s2">- Cleaned CSV: </span><span class="si">{</span><span class="n">cleaned_file</span><span class="si">}</span>
-<span class="s2">- Report:      </span><span class="si">{</span><span class="n">report_file</span><span class="si">}</span>
+<span class="s2">- Cleaned CSV:  </span><span class="si">{</span><span class="n">cleaned_file</span><span class="si">}</span>
+<span class="s2">- Report:       </span><span class="si">{</span><span class="n">report_file</span><span class="si">}</span>
 <span class="s2">"""</span>
 
+<span class="c1"># Save report text</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">report_file</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">report_text</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[SUCCESS] Report saved: </span><span class="si">{</span><span class="n">report_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[SUCCESS] Report saved at: </span><span class="si">{</span><span class="n">report_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8369,8 +8410,8 @@ The report includes row counts, removed duplicates and outliers, processed colum
 ================================================================================
 [STEP 11] SAVING RESULTS
 ================================================================================
-[SUCCESS] Cleaned data saved: cleaned_datasets\cleaned_data_20251205_130529.csv
-[SUCCESS] Report saved: cleaned_datasets\cleaning_report_20251205_130529.txt
+[SUCCESS] Cleaned data saved at: /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/2_result_cleaned_datasets/cleaned_data_20251209_132819.csv
+[SUCCESS] Report saved at: /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/2_result_cleaned_datasets/cleaning_report_20251209_132819.txt
 </pre>
 </div>
 </div>

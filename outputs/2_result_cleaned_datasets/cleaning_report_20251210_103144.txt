@@ -1,0 +1,20 @@
+
+CLEANING REPORT – ASIAN POWER GRID
+===============================================
+Timestamp: 20251210_103144
+
+Original rows:      50010
+Final rows:         49984
+Duplicates removed: 10
+Outliers removed:   16
+
+Processed columns:
+- DecommissionStatus cleaned into OperationalStatus + DecommissionDate
+- Dates converted to datetime
+- 'region' column dropped
+- One-hot encoding for categorical columns
+- Numeric missing values filled
+
+Saved files:
+- Cleaned CSV:  /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/2_result_cleaned_datasets/cleaned_data_20251210_103144.csv
+- Report:       /Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/2_result_cleaned_datasets/cleaning_report_20251210_103144.txt

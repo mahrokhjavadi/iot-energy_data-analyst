@@ -7510,15 +7510,15 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e1cb402f-4cc1-4394-9a2f-2d50e2afbbe1">
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d822e279-9651-4d80-9d32-9bdb871ed86f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span>  <span class="n">dash_bootstrap_components</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dash</span>
 </pre></div>
 </div>
 </div>
@@ -7531,30 +7531,78 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Requirement already satisfied: dash_bootstrap_components in c:\0_da\python312\lib\site-packages (2.0.4)
-Requirement already satisfied: dash&gt;=3.0.4 in c:\0_da\python312\lib\site-packages (from dash_bootstrap_components) (3.3.0)
-Requirement already satisfied: Flask&lt;3.2,&gt;=1.0.4 in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.2)
-Requirement already satisfied: Werkzeug&lt;3.2 in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.3)
-Requirement already satisfied: plotly&gt;=5.0.0 in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (6.5.0)
-Requirement already satisfied: importlib-metadata in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (8.7.0)
-Requirement already satisfied: typing_extensions&gt;=4.1.1 in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (4.15.0)
-Requirement already satisfied: requests in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.32.5)
-Requirement already satisfied: retrying in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.4.2)
-Requirement already satisfied: nest-asyncio in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.6.0)
-Requirement already satisfied: setuptools in c:\0_da\python312\lib\site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (80.9.0)
-Requirement already satisfied: blinker&gt;=1.9.0 in c:\0_da\python312\lib\site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.9.0)
-Requirement already satisfied: click&gt;=8.1.3 in c:\0_da\python312\lib\site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (8.3.1)
-Requirement already satisfied: itsdangerous&gt;=2.2.0 in c:\0_da\python312\lib\site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.2.0)
-Requirement already satisfied: jinja2&gt;=3.1.2 in c:\0_da\python312\lib\site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.6)
-Requirement already satisfied: markupsafe&gt;=2.1.1 in c:\0_da\python312\lib\site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.0.3)
-Requirement already satisfied: colorama in c:\0_da\python312\lib\site-packages (from click&gt;=8.1.3-&gt;Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (0.4.6)
-Requirement already satisfied: narwhals&gt;=1.15.1 in c:\0_da\python312\lib\site-packages (from plotly&gt;=5.0.0-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.12.0)
-Requirement already satisfied: packaging in c:\0_da\python312\lib\site-packages (from plotly&gt;=5.0.0-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (25.0)
-Requirement already satisfied: zipp&gt;=3.20 in c:\0_da\python312\lib\site-packages (from importlib-metadata-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.23.0)
-Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in c:\0_da\python312\lib\site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.4.4)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\0_da\python312\lib\site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.11)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\0_da\python312\lib\site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.5.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\0_da\python312\lib\site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2025.11.12)
+<pre>Requirement already satisfied: dash in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (3.3.0)
+Requirement already satisfied: Flask&lt;3.2,&gt;=1.0.4 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (3.1.2)
+Requirement already satisfied: Werkzeug&lt;3.2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (3.1.4)
+Requirement already satisfied: plotly&gt;=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (6.5.0)
+Requirement already satisfied: importlib-metadata in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (8.7.0)
+Requirement already satisfied: typing_extensions&gt;=4.1.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (4.15.0)
+Requirement already satisfied: requests in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (2.32.5)
+Requirement already satisfied: retrying in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (1.4.2)
+Requirement already satisfied: nest-asyncio in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (1.6.0)
+Requirement already satisfied: setuptools in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash) (65.5.0)
+Requirement already satisfied: blinker&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash) (1.9.0)
+Requirement already satisfied: click&gt;=8.1.3 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash) (8.3.1)
+Requirement already satisfied: itsdangerous&gt;=2.2.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash) (2.2.0)
+Requirement already satisfied: jinja2&gt;=3.1.2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash) (3.1.6)
+Requirement already satisfied: markupsafe&gt;=2.1.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash) (3.0.3)
+Requirement already satisfied: narwhals&gt;=1.15.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash) (2.13.0)
+Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash) (25.0)
+Requirement already satisfied: zipp&gt;=3.20 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from importlib-metadata-&gt;dash) (3.23.0)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash) (3.4.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash) (3.11)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash) (2.5.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash) (2025.11.12)
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e1cb402f-4cc1-4394-9a2f-2d50e2afbbe1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dash_bootstrap_components</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Requirement already satisfied: dash_bootstrap_components in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (2.0.4)
+Requirement already satisfied: dash&gt;=3.0.4 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash_bootstrap_components) (3.3.0)
+Requirement already satisfied: Flask&lt;3.2,&gt;=1.0.4 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.2)
+Requirement already satisfied: Werkzeug&lt;3.2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.4)
+Requirement already satisfied: plotly&gt;=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (6.5.0)
+Requirement already satisfied: importlib-metadata in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (8.7.0)
+Requirement already satisfied: typing_extensions&gt;=4.1.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (4.15.0)
+Requirement already satisfied: requests in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.32.5)
+Requirement already satisfied: retrying in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.4.2)
+Requirement already satisfied: nest-asyncio in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.6.0)
+Requirement already satisfied: setuptools in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from dash&gt;=3.0.4-&gt;dash_bootstrap_components) (65.5.0)
+Requirement already satisfied: blinker&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (1.9.0)
+Requirement already satisfied: click&gt;=8.1.3 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (8.3.1)
+Requirement already satisfied: itsdangerous&gt;=2.2.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.2.0)
+Requirement already satisfied: jinja2&gt;=3.1.2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.1.6)
+Requirement already satisfied: markupsafe&gt;=2.1.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.0.3)
+Requirement already satisfied: narwhals&gt;=1.15.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.13.0)
+Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from plotly&gt;=5.0.0-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (25.0)
+Requirement already satisfied: zipp&gt;=3.20 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from importlib-metadata-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.23.0)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.4.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (3.11)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2.5.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from requests-&gt;dash&gt;=3.0.4-&gt;dash_bootstrap_components) (2025.11.12)
 Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
@@ -7591,7 +7639,7 @@ anomaly detection, and deeper understanding of system behavior.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
@@ -7670,25 +7718,59 @@ sets up the entire structure of the dashboard interface.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'C:</span><span class="se">\\</span><span class="s1">0_DA</span><span class="se">\\</span><span class="s1">iot-energy_data-analyst</span><span class="se">\\</span><span class="s1">outputs</span><span class="se">\\</span><span class="s1">4_result_clustering</span><span class="se">\\</span><span class="s1">clustering_results.csv'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+
+<span class="c1"># ============================================================</span>
+<span class="c1"># 1. LOAD FINAL CLUSTERING RESULTS (RELATIVE, AUTOMATIC)</span>
+<span class="c1"># ============================================================</span>
+
+<span class="c1"># Project root = folder ABOVE the "notebooks" directory</span>
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+
+<span class="c1"># Path to the clustering results output folder</span>
+<span class="n">CLUSTER_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_ROOT</span><span class="p">,</span> <span class="s2">"outputs"</span><span class="p">,</span> <span class="s2">"4_result_clustering"</span><span class="p">)</span>
+
+<span class="c1"># Automatically detect the newest clustering_results CSV</span>
+<span class="n">cluster_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CLUSTER_FOLDER</span><span class="p">,</span> <span class="s2">"clustering_results*.csv"</span><span class="p">)),</span>
+    <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">cluster_files</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"❌ No clustering_results*.csv found in 4_result_clustering folder!"</span><span class="p">)</span>
+
+<span class="c1"># Load latest clustering file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cluster_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ Loaded clustering results from:</span><span class="se">\n</span><span class="si">{</span><span class="n">cluster_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># ============================================================</span>
+<span class="c1"># 2. CLEAN AND PREPARE DATA</span>
+<span class="c1"># ============================================================</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="s1">'Power Factor'</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Power Factor'</span><span class="p">:</span> <span class="s1">'PowerFactor'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Standardize Power Factor column name</span>
+<span class="k">if</span> <span class="s2">"Power Factor"</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Power Factor"</span><span class="p">:</span> <span class="s2">"PowerFactor"</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="c1"># Convert timestamp</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">)</span>
 
+<span class="c1"># Extract time features</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Hour"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Weekday"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">"Month"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"Month"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
+<span class="c1"># Remove invalid rows</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"Month"</span><span class="p">,</span> <span class="s2">"Hour"</span><span class="p">,</span> <span class="s2">"Weekday"</span><span class="p">,</span> <span class="s2">"Voltage (V)"</span><span class="p">,</span> <span class="s2">"Power Consumption (kW)"</span><span class="p">])</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s2">"Month"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Month"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="c1"># ============================================================</span>
+<span class="c1"># 3. DASH APP LAYOUT</span>
+<span class="c1"># ============================================================</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">external_stylesheets</span><span class="o">=</span><span class="p">[</span><span class="n">dbc</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">CYBORG</span><span class="p">])</span>
 
@@ -7701,6 +7783,7 @@ sets up the entire structure of the dashboard interface.</p>
 
     <span class="n">dbc</span><span class="o">.</span><span class="n">Tabs</span><span class="p">([</span>
 
+        <span class="c1"># ------------------ RQ1 ------------------</span>
         <span class="n">dbc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"RQ1: Consumption Patterns"</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
             <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
 
@@ -7719,6 +7802,7 @@ sets up the entire structure of the dashboard interface.</p>
             <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"rq1-plot"</span><span class="p">),</span>
         <span class="p">]),</span>
 
+        <span class="c1"># ------------------ RQ2 ------------------</span>
         <span class="n">dbc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"RQ2: Power &amp; Quality Relations"</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
             <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
 
@@ -7737,6 +7821,7 @@ sets up the entire structure of the dashboard interface.</p>
             <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"rq2-scatter"</span><span class="p">),</span>
         <span class="p">]),</span>
 
+        <span class="c1"># ------------------ RQ3 ------------------</span>
         <span class="n">dbc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"RQ3: Clustering &amp; Anomalies"</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
             <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
 
@@ -7757,6 +7842,7 @@ sets up the entire structure of the dashboard interface.</p>
             <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"rq3-timeseries"</span><span class="p">)</span>
         <span class="p">]),</span>
 
+        <span class="c1"># ------------------ RQ4 ------------------</span>
         <span class="n">dbc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"RQ4: Geographic Map"</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
             <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
 
@@ -7776,6 +7862,7 @@ sets up the entire structure of the dashboard interface.</p>
             <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"rq4-map"</span><span class="p">),</span>
         <span class="p">]),</span>
 
+        <span class="c1"># ------------------ RQ5 ------------------</span>
         <span class="n">dbc</span><span class="o">.</span><span class="n">Tab</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"RQ5: Monthly Evolution"</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
             <span class="n">html</span><span class="o">.</span><span class="n">Br</span><span class="p">(),</span>
 
@@ -7818,11 +7905,9 @@ sets up the entire structure of the dashboard interface.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\alfa\AppData\Local\Temp\ipykernel_9424\1989355603.py:1: DtypeWarning:
-
-Columns (20,22) have mixed types. Specify dtype option on import or set low_memory=False.
-
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>✓ Loaded clustering results from:
+/Users/rebekaqueen2025/Documents/Alfa_training/Data_analyst/iot-energy_data-analyst/outputs/4_result_clustering/clustering_results.csv
 </pre>
 </div>
 </div>
@@ -7908,7 +7993,7 @@ returns an empty figure placeholder.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
@@ -8015,7 +8100,7 @@ key electrical quality parameters across the dataset, helping identify:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
@@ -8089,7 +8174,7 @@ It helps identify:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
@@ -8166,7 +8251,7 @@ which is required for Plotly's geographic rendering:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
@@ -8295,7 +8380,7 @@ seasonal patterns and dynamic operational changes.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
